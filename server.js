@@ -4,6 +4,7 @@ import 'dotenv/config'
 import mongoose from 'mongoose'
 import authRoutes from './routes/authRoutes.js'
 import profileRoutes from './routes/profileRoutes.js'
+import connectionRoutes from './routes/connectionRoutes.js'
 const app = express()
 
 app.use(cors())
@@ -25,6 +26,7 @@ connectDB();
 
 app.use('/api/auth', authRoutes)
 app.use('/api/profile', profileRoutes)
+app.use('/api/connections', connectionRoutes)
 const PORT = process.env.PORT
 
 app.listen(PORT, ()=>{
